@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Список тем</h1>
+        <ul class="list-group">
+            {% for thread in threads %}
+                <li class="list-group-item">
+                    <strong>{{ thread.name }}</strong>: {{ thread.description }}
+                </li>
+            {% empty %}
+                <li class="list-group-item">Нет доступных тем.</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
