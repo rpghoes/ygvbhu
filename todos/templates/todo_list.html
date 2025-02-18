@@ -1,0 +1,9 @@
+{% for todo in todos %}
+    <h2>{{ todo.title }}</h2>
+    <p>{{ todo.description }}</p>
+    <p>Дата завершения: {{ todo.due_date }}</p>
+    <p>Статус: {{ todo.status|yesno:"Выполнено,Не выполнено" }}</p>
+    <a href="{{ todo.id }}/">Подробнее</a>
+    <a href="{{ todo.id }}/delete/">Удалить</a>
+{% endfor %}
+<a href="create/">Добавить задачу</a>
