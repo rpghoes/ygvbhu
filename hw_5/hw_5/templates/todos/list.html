@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Ваши задачи</h2>
+<a href="{% url 'todo_add' %}" class="btn btn-primary">Добавить задачу</a>
+<ul>
+    {% for todo in todos %}
+        <li>
+            <a href="{% url 'todo_detail' todo.id %}">{{ todo.title }}</a> 
+            <a href="{% url 'todo_delete' todo.id %}" class="btn btn-danger">Удалить</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
