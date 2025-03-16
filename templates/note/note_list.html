@@ -1,0 +1,9 @@
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+
+{% for note in notes %}
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.content }}</p>
+    <a href="{% url 'note_edit' note.pk %}">Edit</a>
+    <a href="{% url 'note_delete' note.pk %}">Delete</a>
+{% endfor %}
+<a href="{% url 'note_create' %}">Create Note</a>
